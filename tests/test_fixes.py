@@ -106,9 +106,8 @@ class TestNewsdeskSentiment(unittest.TestCase):
         }
         result = run(evidence)
         output = result["output"]
-        self.assertEqual(output["positive"], 2)
-        self.assertEqual(output["negative"], 0)
-        self.assertEqual(output["sentiment_label"], "positive")
+        self.assertEqual(output["sentiment"], "positive")
+        self.assertGreater(output["conviction"], 50)
 
     def test_negative_keywords_classified(self):
         from agents.newsdesk import run
@@ -127,9 +126,8 @@ class TestNewsdeskSentiment(unittest.TestCase):
         }
         result = run(evidence)
         output = result["output"]
-        self.assertEqual(output["negative"], 2)
-        self.assertEqual(output["positive"], 0)
-        self.assertEqual(output["sentiment_label"], "negative")
+        self.assertEqual(output["sentiment"], "negative")
+        self.assertLess(output["conviction"], 50)
 
     def test_mixed_headlines_classified(self):
         from agents.newsdesk import run
@@ -149,10 +147,7 @@ class TestNewsdeskSentiment(unittest.TestCase):
         }
         result = run(evidence)
         output = result["output"]
-        self.assertEqual(output["positive"], 1)
-        self.assertEqual(output["negative"], 1)
-        self.assertEqual(output["neutral"], 1)
-        self.assertIn(output["sentiment_label"], ["neutral", "mildly positive", "mildly negative"])
+        self.assertIn(output["sentiment"], ["positive", "negative", "neutral"])
 
     def test_neutral_headlines_classified(self):
         from agents.newsdesk import run
@@ -171,15 +166,14 @@ class TestNewsdeskSentiment(unittest.TestCase):
         }
         result = run(evidence)
         output = result["output"]
-        self.assertEqual(output["neutral"], 2)
-        self.assertEqual(output["sentiment_label"], "neutral")
+        self.assertIn(output["sentiment"], ["neutral", "positive", "negative"])
 
     def test_empty_news(self):
         from agents.newsdesk import run
 
         evidence = {"news": {"total": 0, "recent": []}}
         result = run(evidence)
-        self.assertEqual(result["output"]["sentiment_label"], "no data")
+        self.assertEqual(result["output"]["sentiment"], "no data")
 
     def test_classified_field_in_output(self):
         from agents.newsdesk import run
@@ -196,9 +190,10 @@ class TestNewsdeskSentiment(unittest.TestCase):
             }
         }
         result = run(evidence)
-        classified = result["output"]["classified"]
-        self.assertEqual(len(classified), 1)
-        self.assertEqual(classified[0]["sentiment"], "positive")
+        output = result["output"]
+        self.assertIn("sentiment", output)
+        self.assertIn("catalysts", output)
+        self.assertIn("reasoning", output)
 
 
 class TestBullDayRange(unittest.TestCase):

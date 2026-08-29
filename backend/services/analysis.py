@@ -14,7 +14,6 @@ from engine.scoring import evaluate
 from engine.verifier import (
     verify_grounding, verify_scout_grounding, verify_verdict_integrity,
 )
-from engine.llm import analyze_with_llm, is_available
 
 
 _SINGLE_STOCK_AGENTS = ("technician", "fundamentalist", "newsdesk", "bull", "bear", "judge")
@@ -22,6 +21,11 @@ _SINGLE_STOCK_AGENTS = ("technician", "fundamentalist", "newsdesk", "bull", "bea
 
 def run_pipeline(symbol, user_settings=None, force_live=False):
     """Run the full analysis pipeline for a stock.
+
+    Pipeline flow:
+      Evidence -> Scout -> Technician -> Fundamentalist -> Newsdesk -> Bull -> Bear -> Judge -> Messenger
+
+    Each agent tries LLM analysis first, falls back to deterministic logic.
 
     Raises:
         DataUnavailableError: If live mode is on and data cannot be fetched.
@@ -33,28 +37,34 @@ def run_pipeline(symbol, user_settings=None, force_live=False):
     evidence = normalize_evidence(raw_evidence)
 
     agent_outputs["scout"] = scout_run(evidence, strict_live=force_live)
+
     agent_outputs["technician"] = tech_run(evidence)
     agent_outputs["fundamentalist"] = fund_run(evidence)
     agent_outputs["newsdesk"] = news_run(evidence)
-    agent_outputs["bull"] = bull_run(evidence)
-    agent_outputs["bear"] = bear_run(evidence)
+
+    tech_output = agent_outputs["technician"].get("output", {})
+    fund_output = agent_outputs["fundamentalist"].get("output", {})
+    news_output = agent_outputs["newsdesk"].get("output", {})
+
+    agent_outputs["bull"] = bull_run(evidence, tech_output=tech_output, fund_output=fund_output, news_output=news_output)
+    agent_outputs["bear"] = bear_run(evidence, tech_output=tech_output, fund_output=fund_output, news_output=news_output)
 
     scoring_result = evaluate(evidence)
 
-    llm_result = None
-    if is_available():
-        llm_result = analyze_with_llm(evidence)
+    bull_output = agent_outputs["bull"].get("output", {})
+    bear_output = agent_outputs["bear"].get("output", {})
 
-    judge_output = judge_run(evidence, scoring_result)
+    agent_outputs["judge"] = judge_run(
+        evidence,
+        scoring_result=scoring_result,
+        tech_output=agent_outputs["technician"],
+        fund_output=agent_outputs["fundamentalist"],
+        news_output=agent_outputs["newsdesk"],
+        bull_output=agent_outputs["bull"],
+        bear_output=agent_outputs["bear"],
+    )
 
-    if llm_result and isinstance(llm_result, dict):
-        llm_judge = llm_result.get("judge", {})
-        if llm_judge:
-            judge_output["output"]["llm_rationale"] = llm_judge.get("rationale")
-            judge_output["output"]["llm_key_catalyst"] = llm_judge.get("key_catalyst")
-
-    agent_outputs["judge"] = judge_output
-
+    judge_output = agent_outputs["judge"]
     verdict_data = judge_output["output"]
 
     scout_out = agent_outputs.get("scout", {}).get("output", {})
@@ -94,6 +104,11 @@ def run_pipeline(symbol, user_settings=None, force_live=False):
     messenger_output = messenger_run(evidence, verdict_data, user_settings)
     agent_outputs["messenger"] = messenger_output
 
+    llm_used = any(
+        agent_outputs.get(a, {}).get("llm_powered", False)
+        for a in ("technician", "fundamentalist", "newsdesk", "bull", "bear", "judge")
+    )
+
     elapsed = round(time.time() - start_time, 2)
 
     return {
@@ -101,7 +116,7 @@ def run_pipeline(symbol, user_settings=None, force_live=False):
         "agent_outputs": agent_outputs,
         "scoring": scoring_result,
         "verdict": verdict_data,
-        "llm_used": llm_result is not None,
+        "llm_used": llm_used,
         "grounding": grounding_check,
         "verdict_integrity": verdict_check,
         "elapsed_seconds": elapsed,

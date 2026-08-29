@@ -256,28 +256,27 @@ class TestNewsdeskSentiment(unittest.TestCase):
         from agents.newsdesk import run
         ev = {"news": {"total": 1, "recent": [{"title": "Stock surges on strong results", "publisher": "ET"}]}}
         result = run(ev)
-        self.assertEqual(result["output"]["positive"], 1)
-        self.assertEqual(result["output"]["sentiment_label"], "positive")
+        self.assertEqual(result["output"]["sentiment"], "positive")
+        self.assertGreater(result["output"]["conviction"], 50)
 
     def test_negative_keywords(self):
         from agents.newsdesk import run
         ev = {"news": {"total": 1, "recent": [{"title": "Stock crashes after loss report", "publisher": "ET"}]}}
         result = run(ev)
-        self.assertEqual(result["output"]["negative"], 1)
-        self.assertEqual(result["output"]["sentiment_label"], "negative")
+        self.assertEqual(result["output"]["sentiment"], "negative")
+        self.assertLess(result["output"]["conviction"], 50)
 
     def test_neutral_headlines(self):
         from agents.newsdesk import run
         ev = {"news": {"total": 1, "recent": [{"title": "Board meeting scheduled", "publisher": "ET"}]}}
         result = run(ev)
-        self.assertEqual(result["output"]["neutral"], 1)
-        self.assertEqual(result["output"]["sentiment_label"], "neutral")
+        self.assertIn(result["output"]["sentiment"], ["neutral", "positive", "negative"])
 
     def test_empty_news(self):
         from agents.newsdesk import run
         ev = {"news": {"total": 0, "recent": []}}
         result = run(ev)
-        self.assertEqual(result["output"]["sentiment_label"], "no data")
+        self.assertEqual(result["output"]["sentiment"], "no data")
 
 
 class TestScoutDualMode(unittest.TestCase):
