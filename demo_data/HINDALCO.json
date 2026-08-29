@@ -1,0 +1,67 @@
+{
+  "symbol": "HINDALCO.NS",
+  "name": "Hindalco Industries",
+  "sector": "Metals",
+  "cap_segment": "mid",
+  "price": {
+    "live": 897.15,
+    "day_open": 903.91,
+    "high": 919.31,
+    "low": 887.97,
+    "prev_close": 902.75,
+    "day_change_pct": -0.62,
+    "volume": 6928877
+  },
+  "range_52w": {
+    "high": 1216.24,
+    "low": 680.43,
+    "pct_from_high": -26.24,
+    "position_pct": 40.45
+  },
+  "technicals": {
+    "rvol": 0.87,
+    "price_vs_sma_pct": 0.74,
+    "window_return_pct": -8.43,
+    "swing_high": 1202.91,
+    "swing_low": 716.0,
+    "day_range_position_pct": 77.9,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 5,
+    "buy_pct": 56,
+    "hold_pct": 15,
+    "sell_pct": 29,
+    "target_mean": 974.49,
+    "target_low": 859.96,
+    "target_high": 1183.19,
+    "upside_pct": 8.62
+  },
+  "news": {
+    "total": 7,
+    "positive": 2,
+    "negative": 0,
+    "neutral": 5,
+    "recent": [
+      {
+        "title": "Hindalco Industries reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Hindalco Industries outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact Hindalco Industries",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.647362
+}

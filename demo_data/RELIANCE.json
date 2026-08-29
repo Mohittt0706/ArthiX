@@ -1,0 +1,67 @@
+{
+  "symbol": "RELIANCE.NS",
+  "name": "Reliance Industries",
+  "sector": "Oil & Gas",
+  "cap_segment": "large",
+  "price": {
+    "live": 4718.06,
+    "day_open": 4757.24,
+    "high": 4824.62,
+    "low": 4713.45,
+    "prev_close": 4836.86,
+    "day_change_pct": -2.46,
+    "volume": 1535429
+  },
+  "range_52w": {
+    "high": 5282.04,
+    "low": 2877.6,
+    "pct_from_high": -10.68,
+    "position_pct": 76.54
+  },
+  "technicals": {
+    "rvol": 0.32,
+    "price_vs_sma_pct": -0.57,
+    "window_return_pct": 6.44,
+    "swing_high": 4830.36,
+    "swing_low": 3035.53,
+    "day_range_position_pct": 72.04,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 20,
+    "buy_pct": 48,
+    "hold_pct": 34,
+    "sell_pct": 18,
+    "target_mean": 5266.98,
+    "target_low": 4186.92,
+    "target_high": 6832.35,
+    "upside_pct": 11.63
+  },
+  "news": {
+    "total": 10,
+    "positive": 3,
+    "negative": 2,
+    "neutral": 5,
+    "recent": [
+      {
+        "title": "Reliance Industries reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Reliance Industries outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact Reliance Industries",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788011907.33441
+}

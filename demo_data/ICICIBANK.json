@@ -1,0 +1,67 @@
+{
+  "symbol": "ICICIBANK.NS",
+  "name": "ICICI Bank",
+  "sector": "Banking",
+  "cap_segment": "large",
+  "price": {
+    "live": 2250.51,
+    "day_open": 2240.9,
+    "high": 2260.71,
+    "low": 2200.47,
+    "prev_close": 2291.6,
+    "day_change_pct": -1.79,
+    "volume": 7776055
+  },
+  "range_52w": {
+    "high": 2813.93,
+    "low": 1869.99,
+    "pct_from_high": -20.02,
+    "position_pct": 40.31
+  },
+  "technicals": {
+    "rvol": 2.1,
+    "price_vs_sma_pct": 4.93,
+    "window_return_pct": 3.65,
+    "swing_high": 2798.12,
+    "swing_low": 1886.43,
+    "day_range_position_pct": 75.58,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 8,
+    "buy_pct": 72,
+    "hold_pct": 2,
+    "sell_pct": 26,
+    "target_mean": 2834.9,
+    "target_low": 2450.25,
+    "target_high": 3622.82,
+    "upside_pct": 25.97
+  },
+  "news": {
+    "total": 10,
+    "positive": 5,
+    "negative": 2,
+    "neutral": 3,
+    "recent": [
+      {
+        "title": "ICICI Bank reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review ICICI Bank outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact ICICI Bank",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.4587157
+}

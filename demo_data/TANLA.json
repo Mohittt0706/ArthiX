@@ -1,0 +1,67 @@
+{
+  "symbol": "TANLA.NS",
+  "name": "Tanla Platforms",
+  "sector": "IT",
+  "cap_segment": "small",
+  "price": {
+    "live": 2410.11,
+    "day_open": 2421.42,
+    "high": 2436.02,
+    "low": 2365.96,
+    "prev_close": 2363.54,
+    "day_change_pct": 1.97,
+    "volume": 6412361
+  },
+  "range_52w": {
+    "high": 3023.23,
+    "low": 1262.86,
+    "pct_from_high": -20.28,
+    "position_pct": 65.17
+  },
+  "technicals": {
+    "rvol": 0.3,
+    "price_vs_sma_pct": 5.1,
+    "window_return_pct": 12.83,
+    "swing_high": 2781.61,
+    "swing_low": 1269.74,
+    "day_range_position_pct": 35.58,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 7,
+    "buy_pct": 59,
+    "hold_pct": 33,
+    "sell_pct": 8,
+    "target_mean": 2422.13,
+    "target_low": 2055.9,
+    "target_high": 2701.64,
+    "upside_pct": 0.5
+  },
+  "news": {
+    "total": 10,
+    "positive": 2,
+    "negative": 2,
+    "neutral": 6,
+    "recent": [
+      {
+        "title": "Tanla Platforms reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Tanla Platforms outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact Tanla Platforms",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.6877482
+}

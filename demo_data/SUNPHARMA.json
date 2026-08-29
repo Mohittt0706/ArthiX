@@ -1,0 +1,67 @@
+{
+  "symbol": "SUNPHARMA.NS",
+  "name": "Sun Pharma",
+  "sector": "Pharma",
+  "cap_segment": "large",
+  "price": {
+    "live": 3696.44,
+    "day_open": 3730.99,
+    "high": 3777.75,
+    "low": 3599.94,
+    "prev_close": 3703.56,
+    "day_change_pct": -0.19,
+    "volume": 8796028
+  },
+  "range_52w": {
+    "high": 5249.29,
+    "low": 2184.65,
+    "pct_from_high": -29.58,
+    "position_pct": 49.33
+  },
+  "technicals": {
+    "rvol": 1.78,
+    "price_vs_sma_pct": -3.14,
+    "window_return_pct": 5.79,
+    "swing_high": 4830.24,
+    "swing_low": 2389.61,
+    "day_range_position_pct": 67.17,
+    "trend": "down"
+  },
+  "analyst": {
+    "consensus": "sell",
+    "num_analysts": 24,
+    "buy_pct": 61,
+    "hold_pct": 26,
+    "sell_pct": 13,
+    "target_mean": 4481.43,
+    "target_low": 3633.13,
+    "target_high": 5690.9,
+    "upside_pct": 21.24
+  },
+  "news": {
+    "total": 9,
+    "positive": 1,
+    "negative": 1,
+    "neutral": 7,
+    "recent": [
+      {
+        "title": "Sun Pharma reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Sun Pharma outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact Sun Pharma",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.500752
+}

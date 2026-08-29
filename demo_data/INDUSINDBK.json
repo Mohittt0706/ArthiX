@@ -1,0 +1,67 @@
+{
+  "symbol": "INDUSINDBK.NS",
+  "name": "IndusInd Bank",
+  "sector": "Banking",
+  "cap_segment": "mid",
+  "price": {
+    "live": 2594.71,
+    "day_open": 2586.28,
+    "high": 2645.13,
+    "low": 2542.35,
+    "prev_close": 2635.68,
+    "day_change_pct": -1.55,
+    "volume": 8285549
+  },
+  "range_52w": {
+    "high": 3409.77,
+    "low": 1698.76,
+    "pct_from_high": -23.9,
+    "position_pct": 52.36
+  },
+  "technicals": {
+    "rvol": 0.59,
+    "price_vs_sma_pct": 3.39,
+    "window_return_pct": 2.77,
+    "swing_high": 3204.19,
+    "swing_low": 1783.88,
+    "day_range_position_pct": 15.82,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 21,
+    "buy_pct": 24,
+    "hold_pct": 69,
+    "sell_pct": 7,
+    "target_mean": 2628.87,
+    "target_low": 2069.65,
+    "target_high": 3358.06,
+    "upside_pct": 1.32
+  },
+  "news": {
+    "total": 13,
+    "positive": 4,
+    "negative": 3,
+    "neutral": 6,
+    "recent": [
+      {
+        "title": "IndusInd Bank reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review IndusInd Bank outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact IndusInd Bank",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.6547136
+}

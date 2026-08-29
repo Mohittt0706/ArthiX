@@ -1,0 +1,67 @@
+{
+  "symbol": "ITC.NS",
+  "name": "ITC Limited",
+  "sector": "FMCG",
+  "cap_segment": "large",
+  "price": {
+    "live": 3110.93,
+    "day_open": 3115.77,
+    "high": 3153.42,
+    "low": 3048.61,
+    "prev_close": 3187.94,
+    "day_change_pct": -2.42,
+    "volume": 4772818
+  },
+  "range_52w": {
+    "high": 4438.97,
+    "low": 1973.08,
+    "pct_from_high": -29.92,
+    "position_pct": 46.14
+  },
+  "technicals": {
+    "rvol": 0.93,
+    "price_vs_sma_pct": -1.6,
+    "window_return_pct": 11.01,
+    "swing_high": 4334.8,
+    "swing_low": 2087.38,
+    "day_range_position_pct": 57.5,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 15,
+    "buy_pct": 80,
+    "hold_pct": 0,
+    "sell_pct": 20,
+    "target_mean": 3615.58,
+    "target_low": 3082.25,
+    "target_high": 4206.92,
+    "upside_pct": 16.22
+  },
+  "news": {
+    "total": 12,
+    "positive": 5,
+    "negative": 3,
+    "neutral": 4,
+    "recent": [
+      {
+        "title": "ITC Limited reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review ITC Limited outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact ITC Limited",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.4805446
+}

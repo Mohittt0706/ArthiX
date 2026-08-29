@@ -1,0 +1,67 @@
+{
+  "symbol": "NTPC.NS",
+  "name": "NTPC",
+  "sector": "Power",
+  "cap_segment": "mid",
+  "price": {
+    "live": 668.97,
+    "day_open": 663.11,
+    "high": 682.61,
+    "low": 654.4,
+    "prev_close": 662.85,
+    "day_change_pct": 0.92,
+    "volume": 6719544
+  },
+  "range_52w": {
+    "high": 844.29,
+    "low": 368.91,
+    "pct_from_high": -20.77,
+    "position_pct": 63.12
+  },
+  "technicals": {
+    "rvol": 0.46,
+    "price_vs_sma_pct": 1.71,
+    "window_return_pct": 4.55,
+    "swing_high": 779.74,
+    "swing_low": 372.76,
+    "day_range_position_pct": 31.37,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "sell",
+    "num_analysts": 25,
+    "buy_pct": 68,
+    "hold_pct": 4,
+    "sell_pct": 28,
+    "target_mean": 728.55,
+    "target_low": 638.49,
+    "target_high": 876.78,
+    "upside_pct": 8.91
+  },
+  "news": {
+    "total": 12,
+    "positive": 2,
+    "negative": 3,
+    "neutral": 7,
+    "recent": [
+      {
+        "title": "NTPC reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review NTPC outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact NTPC",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.6626337
+}

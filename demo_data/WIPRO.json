@@ -1,0 +1,67 @@
+{
+  "symbol": "WIPRO.NS",
+  "name": "Wipro",
+  "sector": "IT",
+  "cap_segment": "large",
+  "price": {
+    "live": 3673.26,
+    "day_open": 3657.52,
+    "high": 3699.78,
+    "low": 3605.18,
+    "prev_close": 3672.95,
+    "day_change_pct": 0.01,
+    "volume": 8228775
+  },
+  "range_52w": {
+    "high": 4442.2,
+    "low": 3057.7,
+    "pct_from_high": -17.31,
+    "position_pct": 44.46
+  },
+  "technicals": {
+    "rvol": 3.38,
+    "price_vs_sma_pct": 0.57,
+    "window_return_pct": 2.03,
+    "swing_high": 4289.21,
+    "swing_low": 3223.09,
+    "day_range_position_pct": 64.22,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 10,
+    "buy_pct": 64,
+    "hold_pct": 27,
+    "sell_pct": 9,
+    "target_mean": 4768.37,
+    "target_low": 3821.68,
+    "target_high": 5417.46,
+    "upside_pct": 29.81
+  },
+  "news": {
+    "total": 3,
+    "positive": 1,
+    "negative": 0,
+    "neutral": 2,
+    "recent": [
+      {
+        "title": "Wipro reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Wipro outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact Wipro",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.5060122
+}

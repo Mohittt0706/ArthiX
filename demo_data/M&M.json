@@ -1,0 +1,67 @@
+{
+  "symbol": "M&M.NS",
+  "name": "Mahindra & Mahindra",
+  "sector": "Automobile",
+  "cap_segment": "mid",
+  "price": {
+    "live": 1904.12,
+    "day_open": 1899.75,
+    "high": 1941.86,
+    "low": 1881.37,
+    "prev_close": 1869.08,
+    "day_change_pct": 1.87,
+    "volume": 7962861
+  },
+  "range_52w": {
+    "high": 2636.63,
+    "low": 1440.44,
+    "pct_from_high": -27.78,
+    "position_pct": 38.76
+  },
+  "technicals": {
+    "rvol": 3.12,
+    "price_vs_sma_pct": -4.23,
+    "window_return_pct": 1.19,
+    "swing_high": 2566.33,
+    "swing_low": 1524.54,
+    "day_range_position_pct": 79.74,
+    "trend": "down"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 20,
+    "buy_pct": 75,
+    "hold_pct": 13,
+    "sell_pct": 12,
+    "target_mean": 2133.05,
+    "target_low": 1818.73,
+    "target_high": 2368.37,
+    "upside_pct": 12.02
+  },
+  "news": {
+    "total": 7,
+    "positive": 3,
+    "negative": 1,
+    "neutral": 3,
+    "recent": [
+      {
+        "title": "Mahindra & Mahindra reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Mahindra & Mahindra outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact Mahindra & Mahindra",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.660106
+}

@@ -1,0 +1,67 @@
+{
+  "symbol": "DIXON.NS",
+  "name": "Dixon Technologies",
+  "sector": "Electronics",
+  "cap_segment": "small",
+  "price": {
+    "live": 2419.19,
+    "day_open": 2420.23,
+    "high": 2423.92,
+    "low": 2378.05,
+    "prev_close": 2394.63,
+    "day_change_pct": 1.03,
+    "volume": 3130490
+  },
+  "range_52w": {
+    "high": 3121.18,
+    "low": 1435.94,
+    "pct_from_high": -22.49,
+    "position_pct": 58.34
+  },
+  "technicals": {
+    "rvol": 0.39,
+    "price_vs_sma_pct": 4.04,
+    "window_return_pct": 12.48,
+    "swing_high": 3114.42,
+    "swing_low": 1578.0,
+    "day_range_position_pct": 27.27,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "sell",
+    "num_analysts": 27,
+    "buy_pct": 40,
+    "hold_pct": 47,
+    "sell_pct": 13,
+    "target_mean": 3018.88,
+    "target_low": 2316.67,
+    "target_high": 3815.28,
+    "upside_pct": 24.79
+  },
+  "news": {
+    "total": 8,
+    "positive": 1,
+    "negative": 2,
+    "neutral": 5,
+    "recent": [
+      {
+        "title": "Dixon Technologies reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Dixon Technologies outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact Dixon Technologies",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.6734445
+}

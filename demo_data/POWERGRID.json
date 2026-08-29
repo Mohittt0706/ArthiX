@@ -1,0 +1,67 @@
+{
+  "symbol": "POWERGRID.NS",
+  "name": "Power Grid Corp",
+  "sector": "Power",
+  "cap_segment": "mid",
+  "price": {
+    "live": 4261.14,
+    "day_open": 4233.3,
+    "high": 4290.9,
+    "low": 4216.89,
+    "prev_close": 4299.85,
+    "day_change_pct": -0.9,
+    "volume": 6951151
+  },
+  "range_52w": {
+    "high": 5740.96,
+    "low": 2526.6,
+    "pct_from_high": -25.78,
+    "position_pct": 53.96
+  },
+  "technicals": {
+    "rvol": 1.47,
+    "price_vs_sma_pct": -1.96,
+    "window_return_pct": -6.84,
+    "swing_high": 5417.65,
+    "swing_low": 2531.45,
+    "day_range_position_pct": 63.09,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "sell",
+    "num_analysts": 19,
+    "buy_pct": 58,
+    "hold_pct": 17,
+    "sell_pct": 25,
+    "target_mean": 5432.89,
+    "target_low": 4693.97,
+    "target_high": 6634.63,
+    "upside_pct": 27.5
+  },
+  "news": {
+    "total": 5,
+    "positive": 1,
+    "negative": 1,
+    "neutral": 3,
+    "recent": [
+      {
+        "title": "Power Grid Corp reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Power Grid Corp outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact Power Grid Corp",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.6650374
+}

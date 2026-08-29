@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block title %}{{ symbol }} Analysis{% endblock %}
+
+{% block content %}
+<div id="analysis-loading" style="text-align:center; padding:4rem;">
+    <div class="spinner" style="width:40px;height:40px;border-width:3px;"></div>
+    <p style="margin-top:1rem; color:var(--text-secondary);">Loading analysis for {{ symbol }}...</p>
+</div>
+<div id="analysis-result" style="display:none;"></div>
+{% endblock %}
+
+{% block script %}
+<script>
+const stockSymbol = "{{ symbol }}";
+
+async function loadAnalysis() {
+    try {
+        const res = await fetch('/api/analyze', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ symbol: stockSymbol })
+        });
+        if (!res.ok) {
+            const err = await res.json();
+            document.getElementById('analysis-loading').innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-icon">❌</div>
+                    <h3>Analysis failed</h3>
+                    <p>${err.error || 'Unknown error'}</p>
+                    <a href="/dashboard" class="btn btn-primary" style="margin-top:1rem;">Back to Dashboard</a>
+                </div>`;
+            return;
+        }
+        const data = await res.json();
+        document.getElementById('analysis-loading').style.display = 'none';
+        renderFullResult(data);
+    } catch(e) {
+        document.getElementById('analysis-loading').innerHTML = `
+            <div class="empty-state">
+                <div class="empty-icon">❌</div>
+                <h3>Network error</h3>
+                <p>${e.message}</p>
+            </div>`;
+    }
+}
+
+function renderFullResult(data) {
+    const v = data.verdict;
+    const e = data.evidence;
+    const agents = data.agent_outputs;
+    const verdictClass = v.verdict.toLowerCase();
+    const change = e.price?.day_change_pct;
+    const changeStr = change != null ? `${change >= 0 ? '+' : ''}${change.toFixed(2)}%` : 'N/A';
+    const changeClass = change > 0 ? 'up' : change < 0 ? 'down' : '';
+
+    document.getElementById('analysis-result').innerHTML = `
+    <div class="stock-header">
+        <div>
+            <div class="stock-symbol">${e.symbol.replace('.NS','')}</div>
+            <div class="stock-name">${e.name} · ${e.sector} · ${e.cap_segment} cap</div>
+        </div>
+        <div style="margin-left:auto; text-align:right;">
+            <div class="stock-price">₹${e.price?.live?.toLocaleString() || 'N/A'}</div>
+            <div class="stock-change ${changeClass}">${changeStr}</div>
+        </div>
+    </div>
+    <div class="verdict-section">
+        <div class="verdict-badge ${verdictClass}">${v.verdict === 'BUY' ? '🟢' : v.verdict === 'WATCH' ? '🟡' : '🔴'} ${v.verdict}</div>
+        <div class="verdict-confidence">${v.confidence}<span>/10 confidence</span></div>
+    </div>
+    <div class="stat-grid">
+        <div class="stat-card positive"><div class="stat-label">Bull Score</div><div class="stat-value">${v.bull_score}</div></div>
+        <div class="stat-card negative"><div class="stat-label">Bear Score</div><div class="stat-value">${v.bear_score}</div></div>
+        <div class="stat-card ${v.net > 0 ? 'positive' : v.net < 0 ? 'negative' : 'neutral'}"><div class="stat-label">Net Score</div><div class="stat-value">${v.net > 0 ? '+' : ''}${v.net}</div></div>
+        <div class="stat-card"><div class="stat-label">Winner</div><div class="stat-value">${v.winner}</div></div>
+    </div>
+    <div class="card" style="margin-bottom:1rem;">
+        <div class="card-header"><span class="card-title">Score Breakdown</span></div>
+        <div class="score-row"><span class="score-label">Bull</span><div class="score-bar-container"><div class="score-bar bull" style="width:${v.bull_score}%"></div></div><span class="score-value">${v.bull_score}</span></div>
+        <div class="score-row"><span class="score-label">Bear</span><div class="score-bar-container"><div class="score-bar bear" style="width:${v.bear_score}%"></div></div><span class="score-value">${v.bear_score}</span></div>
+    </div>
+    <div class="analysis-grid">
+        <div class="analysis-section">
+            <div class="section-title"><span class="section-icon">📊</span> Technical Analysis</div>
+            <ul class="analysis-list">
+                <li><span class="label">Trend:</span> ${e.technicals?.trend || 'N/A'}</li>
+                <li><span class="label">RVOL:</span> ${e.technicals?.rvol || 'N/A'}x</li>
+                <li><span class="label">Price vs SMA:</span> ${e.technicals?.price_vs_sma_pct != null ? e.technicals.price_vs_sma_pct.toFixed(1) + '%' : 'N/A'}</li>
+                <li><span class="label">52-Week Position:</span> ${e.range_52w?.position_pct != null ? e.range_52w.position_pct.toFixed(0) + '%' : 'N/A'}</li>
+                <li><span class="label">Recent Return:</span> ${e.technicals?.window_return_pct != null ? e.technicals.window_return_pct.toFixed(1) + '%' : 'N/A'}</li>
+            </ul>
+        </div>
+        <div class="analysis-section">
+            <div class="section-title"><span class="section-icon">📈</span> Fundamental / Analyst</div>
+            <ul class="analysis-list">
+                <li><span class="label">Consensus:</span> ${e.analyst?.consensus || 'N/A'}</li>
+                <li><span class="label">Analysts:</span> ${e.analyst?.num_analysts || 'N/A'}</li>
+                <li><span class="label">Target:</span> ₹${e.analyst?.target_mean?.toLocaleString() || 'N/A'}</li>
+                <li><span class="label">Upside:</span> ${e.analyst?.upside_pct != null ? e.analyst.upside_pct.toFixed(1) + '%' : 'N/A'}</li>
+                <li><span class="label">Buy/Hold/Sell:</span> ${e.analyst?.buy_pct ?? 'N/A'}% / ${e.analyst?.hold_pct ?? 'N/A'}% / ${e.analyst?.sell_pct ?? 'N/A'}%</li>
+            </ul>
+        </div>
+        <div class="analysis-section">
+            <div class="section-title"><span class="section-icon">📰</span> News Sentiment</div>
+            <div class="stat-grid" style="margin:0;">
+                <div class="stat-card positive"><div class="stat-label">Pos</div><div class="stat-value">${e.news?.positive || 0}</div></div>
+                <div class="stat-card neutral"><div class="stat-label">Neu</div><div class="stat-value">${e.news?.neutral || 0}</div></div>
+                <div class="stat-card negative"><div class="stat-label">Neg</div><div class="stat-value">${e.news?.negative || 0}</div></div>
+            </div>
+            <div style="margin-top:0.75rem;">${(e.news?.recent || []).map(n => `<div class="news-item"><div class="news-title">${n.title||''}</div><div class="news-source">${n.publisher||''}</div></div>`).join('')}</div>
+        </div>
+        <div class="analysis-section">
+            <div class="section-title"><span class="section-icon">🎯</span> Key Details</div>
+            <ul class="analysis-list">
+                <li><span class="label">Key Catalyst:</span> ${v.key_catalyst || 'N/A'}</li>
+                <li><span class="label">52-Week High:</span> ₹${e.range_52w?.high?.toLocaleString() || 'N/A'}</li>
+                <li><span class="label">52-Week Low:</span> ₹${e.range_52w?.low?.toLocaleString() || 'N/A'}</li>
+                <li><span class="label">Volume:</span> ${e.price?.volume?.toLocaleString() || 'N/A'}</li>
+                <li><span class="label">Source:</span> ${e.source || 'N/A'}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="debate-section">
+        <div class="debate-entry bull"><div class="agent-label">🐂 Bull Case</div><div class="debate-text">${agents.bull?.output?.summary||'N/A'}</div></div>
+        <div class="debate-entry bear"><div class="agent-label">🐻 Bear Case</div><div class="debate-text">${agents.bear?.output?.summary||'N/A'}</div></div>
+        <div class="debate-entry judge"><div class="agent-label">⚖️ Judge Verdict</div><div class="debate-text"><strong>${v.rationale}</strong><br><br><em>Key catalyst: ${v.key_catalyst}</em></div></div>
+    </div>
+    <div class="disclaimer" style="margin-top:2rem;">⚠️ Analysis only. No trade was placed. Not investment advice. Data: ${e.source||'demo'}.</div>`;
+    document.getElementById('analysis-result').style.display = 'block';
+}
+
+loadAnalysis();
+</script>
+{% endblock %}

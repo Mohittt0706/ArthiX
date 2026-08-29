@@ -1,0 +1,67 @@
+{
+  "symbol": "IIFL.NS",
+  "name": "IIFL Finance",
+  "sector": "Financial Services",
+  "cap_segment": "small",
+  "price": {
+    "live": 4836.25,
+    "day_open": 4832.26,
+    "high": 4877.06,
+    "low": 4724.17,
+    "prev_close": 4853.3,
+    "day_change_pct": -0.35,
+    "volume": 6650550
+  },
+  "range_52w": {
+    "high": 5527.29,
+    "low": 2491.33,
+    "pct_from_high": -12.5,
+    "position_pct": 77.24
+  },
+  "technicals": {
+    "rvol": 3.03,
+    "price_vs_sma_pct": 4.12,
+    "window_return_pct": 4.27,
+    "swing_high": 5040.04,
+    "swing_low": 2639.21,
+    "day_range_position_pct": 60.45,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "sell",
+    "num_analysts": 13,
+    "buy_pct": 45,
+    "hold_pct": 44,
+    "sell_pct": 11,
+    "target_mean": 5811.22,
+    "target_low": 4945.51,
+    "target_high": 7183.69,
+    "upside_pct": 20.16
+  },
+  "news": {
+    "total": 6,
+    "positive": 1,
+    "negative": 3,
+    "neutral": 2,
+    "recent": [
+      {
+        "title": "IIFL Finance reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review IIFL Finance outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact IIFL Finance",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.7012749
+}

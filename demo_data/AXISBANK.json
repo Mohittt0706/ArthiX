@@ -1,0 +1,67 @@
+{
+  "symbol": "AXISBANK.NS",
+  "name": "Axis Bank",
+  "sector": "Banking",
+  "cap_segment": "large",
+  "price": {
+    "live": 4819.76,
+    "day_open": 4807.47,
+    "high": 4826.76,
+    "low": 4704.37,
+    "prev_close": 4732.54,
+    "day_change_pct": 1.84,
+    "volume": 5386982
+  },
+  "range_52w": {
+    "high": 5422.97,
+    "low": 3903.55,
+    "pct_from_high": -11.12,
+    "position_pct": 60.3
+  },
+  "technicals": {
+    "rvol": 2.57,
+    "price_vs_sma_pct": -3.02,
+    "window_return_pct": -8.41,
+    "swing_high": 5012.19,
+    "swing_low": 4007.7,
+    "day_range_position_pct": 37.0,
+    "trend": "down"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 5,
+    "buy_pct": 75,
+    "hold_pct": 5,
+    "sell_pct": 20,
+    "target_mean": 6166.22,
+    "target_low": 5244.98,
+    "target_high": 7946.92,
+    "upside_pct": 27.94
+  },
+  "news": {
+    "total": 10,
+    "positive": 4,
+    "negative": 0,
+    "neutral": 6,
+    "recent": [
+      {
+        "title": "Axis Bank reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Axis Bank outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact Axis Bank",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.4929316
+}

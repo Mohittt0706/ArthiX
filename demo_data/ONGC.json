@@ -1,0 +1,67 @@
+{
+  "symbol": "ONGC.NS",
+  "name": "Oil and Natural Gas Corp",
+  "sector": "Oil & Gas",
+  "cap_segment": "large",
+  "price": {
+    "live": 4315.65,
+    "day_open": 4323.69,
+    "high": 4357.9,
+    "low": 4312.85,
+    "prev_close": 4375.56,
+    "day_change_pct": -1.37,
+    "volume": 725011
+  },
+  "range_52w": {
+    "high": 6165.05,
+    "low": 3466.64,
+    "pct_from_high": -30.0,
+    "position_pct": 31.46
+  },
+  "technicals": {
+    "rvol": 1.11,
+    "price_vs_sma_pct": 1.34,
+    "window_return_pct": 2.79,
+    "swing_high": 6043.09,
+    "swing_low": 3561.36,
+    "day_range_position_pct": 64.17,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 15,
+    "buy_pct": 52,
+    "hold_pct": 25,
+    "sell_pct": 23,
+    "target_mean": 4879.42,
+    "target_low": 3945.49,
+    "target_high": 6243.66,
+    "upside_pct": 13.06
+  },
+  "news": {
+    "total": 7,
+    "positive": 3,
+    "negative": 2,
+    "neutral": 2,
+    "recent": [
+      {
+        "title": "Oil and Natural Gas Corp reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Oil and Natural Gas Corp outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact Oil and Natural Gas Corp",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.5886803
+}

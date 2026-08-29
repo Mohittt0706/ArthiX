@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block title %}Watchlist{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Watchlist</h1>
+    <p>Track your favorite stocks</p>
+</div>
+
+<div class="card" style="margin-bottom:1.5rem;">
+    <div class="card-header">
+        <span class="card-title">Add Stock</span>
+    </div>
+    <div style="display:flex; gap:10px;">
+        <input type="text" class="form-input" id="watchlist-search" placeholder="Search stock symbol..." style="flex:1;" autocomplete="off">
+        <button class="btn btn-primary" onclick="addToWatchlist()">Add</button>
+    </div>
+    <div class="search-suggestions" id="watchlist-suggestions"></div>
+</div>
+
+<div id="watchlist-container">
+    <div class="empty-state" id="empty-watchlist">
+        <div class="empty-icon">⭐</div>
+        <h3>Your watchlist is empty</h3>
+        <p>Add stocks to track them easily.</p>
+    </div>
+    <div class="watchlist-grid" id="watchlist-grid"></div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+let wlTimeout = null;
+let selectedWlStock = null;
+
+const wlInput = document.getElementById('watchlist-search');
+const wlSuggestions = document.getElementById('watchlist-suggestions');
+
+wlInput.addEventListener('input', function() {
+    clearTimeout(wlTimeout);
+    const q = this.value.trim();
+    if (q.length < 1) { wlSuggestions.classList.remove('active'); return; }
+    wlTimeout = setTimeout(() => searchForWatchlist(q), 200);
+});
+
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('#watchlist-search') && !e.target.closest('#watchlist-suggestions')) {
+        wlSuggestions.classList.remove('active');
+    }
+});
+
+async function searchForWatchlist(q) {
+    try {
+        const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
+        const results = await res.json();
+        if (results.length === 0) { wlSuggestions.classList.remove('active'); return; }
+        wlSuggestions.innerHTML = results.slice(0, 5).map(s => `
+            <div class="search-suggestion" onclick="selectWlStock('${s.symbol}', '${s.name.replace(/'/g, "\\'")}')">
+                <span class="symbol">${s.symbol.replace('.NS','')}</span>
+                <span class="name"> — ${s.name}</span>
+            </div>
+        `).join('');
+        wlSuggestions.classList.add('active');
+    } catch(e) {}
+}
+
+function selectWlStock(symbol, name) {
+    selectedWlStock = { symbol, name };
+    wlInput.value = `${symbol.replace('.NS','')} — ${name}`;
+    wlSuggestions.classList.remove('active');
+}
+
+async function addToWatchlist() {
+    if (!selectedWlStock) return;
+    try {
+        await fetch('/api/watchlist', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ symbol: selectedWlStock.symbol, name: selectedWlStock.name })
+        });
+        selectedWlStock = null;
+        wlInput.value = '';
+        loadWatchlist();
+    } catch(e) {}
+}
+
+async function removeFromWatchlist(symbol) {
+    try {
+        await fetch(`/api/watchlist/${symbol}`, { method: 'DELETE' });
+        loadWatchlist();
+    } catch(e) {}
+}
+
+async function loadWatchlist() {
+    try {
+        const res = await fetch('/api/watchlist');
+        const data = await res.json();
+        const grid = document.getElementById('watchlist-grid');
+        const empty = document.getElementById('empty-watchlist');
+
+        if (data.length === 0) {
+            empty.style.display = 'block';
+            grid.innerHTML = '';
+            return;
+        }
+
+        empty.style.display = 'none';
+        grid.innerHTML = data.map(w => `
+            <div class="watchlist-card">
+                <div class="stock-info">
+                    <div class="stock-symbol">${w.symbol.replace('.NS','')}</div>
+                    <div class="stock-name">${w.name || ''}</div>
+                </div>
+                <div class="stock-actions">
+                    <button class="btn-sm" onclick="window.location='/analysis/${w.symbol}'">Analyze</button>
+                    <button class="btn-sm danger" onclick="removeFromWatchlist('${w.symbol}')">Remove</button>
+                </div>
+            </div>
+        `).join('');
+    } catch(e) {}
+}
+
+loadWatchlist();
+</script>
+{% endblock %}

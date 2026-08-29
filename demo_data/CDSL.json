@@ -1,0 +1,67 @@
+{
+  "symbol": "CDSL.NS",
+  "name": "CDSL",
+  "sector": "Financial Services",
+  "cap_segment": "small",
+  "price": {
+    "live": 721.55,
+    "day_open": 726.45,
+    "high": 738.27,
+    "low": 700.87,
+    "prev_close": 731.53,
+    "day_change_pct": -1.37,
+    "volume": 903103
+  },
+  "range_52w": {
+    "high": 802.62,
+    "low": 608.27,
+    "pct_from_high": -10.1,
+    "position_pct": 58.29
+  },
+  "technicals": {
+    "rvol": 2.0,
+    "price_vs_sma_pct": 4.38,
+    "window_return_pct": 4.04,
+    "swing_high": 793.35,
+    "swing_low": 644.86,
+    "day_range_position_pct": 74.46,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "sell",
+    "num_analysts": 24,
+    "buy_pct": 66,
+    "hold_pct": 29,
+    "sell_pct": 5,
+    "target_mean": 782.43,
+    "target_low": 626.71,
+    "target_high": 948.85,
+    "upside_pct": 8.44
+  },
+  "news": {
+    "total": 10,
+    "positive": 5,
+    "negative": 0,
+    "neutral": 5,
+    "recent": [
+      {
+        "title": "CDSL reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review CDSL outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact CDSL",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.694179
+}

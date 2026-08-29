@@ -1,0 +1,67 @@
+{
+  "symbol": "CAMS.NS",
+  "name": "CAMS",
+  "sector": "Financial Services",
+  "cap_segment": "small",
+  "price": {
+    "live": 843.67,
+    "day_open": 839.58,
+    "high": 856.36,
+    "low": 840.68,
+    "prev_close": 848.32,
+    "day_change_pct": -0.55,
+    "volume": 2953568
+  },
+  "range_52w": {
+    "high": 1178.52,
+    "low": 425.13,
+    "pct_from_high": -28.41,
+    "position_pct": 55.55
+  },
+  "technicals": {
+    "rvol": 1.79,
+    "price_vs_sma_pct": 1.81,
+    "window_return_pct": -0.81,
+    "swing_high": 1096.15,
+    "swing_low": 459.14,
+    "day_range_position_pct": 34.3,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 6,
+    "buy_pct": 55,
+    "hold_pct": 34,
+    "sell_pct": 11,
+    "target_mean": 920.39,
+    "target_low": 745.82,
+    "target_high": 1172.01,
+    "upside_pct": 9.09
+  },
+  "news": {
+    "total": 11,
+    "positive": 5,
+    "negative": 0,
+    "neutral": 6,
+    "recent": [
+      {
+        "title": "CAMS reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review CAMS outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact CAMS",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.6975417
+}

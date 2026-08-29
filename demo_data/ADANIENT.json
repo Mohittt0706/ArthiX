@@ -1,0 +1,67 @@
+{
+  "symbol": "ADANIENT.NS",
+  "name": "Adani Enterprises",
+  "sector": "Conglomerate",
+  "cap_segment": "mid",
+  "price": {
+    "live": 3021.39,
+    "day_open": 3013.64,
+    "high": 3057.04,
+    "low": 2974.2,
+    "prev_close": 3013.54,
+    "day_change_pct": 0.26,
+    "volume": 2624344
+  },
+  "range_52w": {
+    "high": 3660.53,
+    "low": 1731.28,
+    "pct_from_high": -17.46,
+    "position_pct": 66.87
+  },
+  "technicals": {
+    "rvol": 0.5,
+    "price_vs_sma_pct": 4.14,
+    "window_return_pct": 1.53,
+    "swing_high": 3636.04,
+    "swing_low": 1758.83,
+    "day_range_position_pct": 64.87,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "sell",
+    "num_analysts": 13,
+    "buy_pct": 68,
+    "hold_pct": 7,
+    "sell_pct": 25,
+    "target_mean": 3475.95,
+    "target_low": 2799.57,
+    "target_high": 4495.0,
+    "upside_pct": 15.04
+  },
+  "news": {
+    "total": 9,
+    "positive": 2,
+    "negative": 1,
+    "neutral": 6,
+    "recent": [
+      {
+        "title": "Adani Enterprises reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Adani Enterprises outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact Adani Enterprises",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.5912673
+}

@@ -1,0 +1,67 @@
+{
+  "symbol": "EICHERMOT.NS",
+  "name": "Eicher Motors",
+  "sector": "Automobile",
+  "cap_segment": "mid",
+  "price": {
+    "live": 2973.02,
+    "day_open": 2982.65,
+    "high": 3038.67,
+    "low": 2941.74,
+    "prev_close": 3003.89,
+    "day_change_pct": -1.03,
+    "volume": 6641042
+  },
+  "range_52w": {
+    "high": 4125.81,
+    "low": 2577.32,
+    "pct_from_high": -27.94,
+    "position_pct": 25.55
+  },
+  "technicals": {
+    "rvol": 1.85,
+    "price_vs_sma_pct": 4.83,
+    "window_return_pct": -3.26,
+    "swing_high": 3928.66,
+    "swing_low": 2604.15,
+    "day_range_position_pct": 82.52,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 5,
+    "buy_pct": 48,
+    "hold_pct": 30,
+    "sell_pct": 22,
+    "target_mean": 2987.92,
+    "target_low": 2563.26,
+    "target_high": 3546.72,
+    "upside_pct": 0.5
+  },
+  "news": {
+    "total": 9,
+    "positive": 2,
+    "negative": 1,
+    "neutral": 6,
+    "recent": [
+      {
+        "title": "Eicher Motors reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Eicher Motors outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact Eicher Motors",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788012486.164661
+}

@@ -1,0 +1,67 @@
+{
+  "symbol": "BAJAJ-AUTO.NS",
+  "name": "Bajaj Auto",
+  "sector": "Automobile",
+  "cap_segment": "mid",
+  "price": {
+    "live": 3727.03,
+    "day_open": 3706.03,
+    "high": 3809.93,
+    "low": 3722.19,
+    "prev_close": 3748.78,
+    "day_change_pct": -0.58,
+    "volume": 5726736
+  },
+  "range_52w": {
+    "high": 5297.13,
+    "low": 2078.76,
+    "pct_from_high": -29.64,
+    "position_pct": 51.21
+  },
+  "technicals": {
+    "rvol": 2.83,
+    "price_vs_sma_pct": 4.22,
+    "window_return_pct": 2.51,
+    "swing_high": 5095.71,
+    "swing_low": 2125.44,
+    "day_range_position_pct": 47.33,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 11,
+    "buy_pct": 59,
+    "hold_pct": 15,
+    "sell_pct": 26,
+    "target_mean": 4350.25,
+    "target_low": 3689.49,
+    "target_high": 5241.82,
+    "upside_pct": 16.72
+  },
+  "news": {
+    "total": 6,
+    "positive": 4,
+    "negative": 0,
+    "neutral": 2,
+    "recent": [
+      {
+        "title": "Bajaj Auto reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Bajaj Auto outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact Bajaj Auto",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788012440.2862136
+}

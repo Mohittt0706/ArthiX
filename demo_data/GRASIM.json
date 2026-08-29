@@ -1,0 +1,67 @@
+{
+  "symbol": "GRASIM.NS",
+  "name": "Grasim Industries",
+  "sector": "Cement",
+  "cap_segment": "mid",
+  "price": {
+    "live": 630.0,
+    "day_open": 633.75,
+    "high": 640.32,
+    "low": 623.32,
+    "prev_close": 628.83,
+    "day_change_pct": 0.19,
+    "volume": 895960
+  },
+  "range_52w": {
+    "high": 788.74,
+    "low": 348.2,
+    "pct_from_high": -20.13,
+    "position_pct": 63.97
+  },
+  "technicals": {
+    "rvol": 2.16,
+    "price_vs_sma_pct": 3.83,
+    "window_return_pct": -0.47,
+    "swing_high": 773.1,
+    "swing_low": 354.41,
+    "day_range_position_pct": 43.91,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 19,
+    "buy_pct": 45,
+    "hold_pct": 27,
+    "sell_pct": 28,
+    "target_mean": 730.58,
+    "target_low": 599.14,
+    "target_high": 915.96,
+    "upside_pct": 15.96
+  },
+  "news": {
+    "total": 13,
+    "positive": 5,
+    "negative": 1,
+    "neutral": 7,
+    "recent": [
+      {
+        "title": "Grasim Industries reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Grasim Industries outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact Grasim Industries",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.6447861
+}

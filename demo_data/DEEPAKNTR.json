@@ -1,0 +1,67 @@
+{
+  "symbol": "DEEPAKNTR.NS",
+  "name": "Deepak Nitrite",
+  "sector": "Chemicals",
+  "cap_segment": "small",
+  "price": {
+    "live": 4978.12,
+    "day_open": 5000.37,
+    "high": 4999.91,
+    "low": 4904.92,
+    "prev_close": 5019.32,
+    "day_change_pct": -0.82,
+    "volume": 7448445
+  },
+  "range_52w": {
+    "high": 6462.43,
+    "low": 3419.59,
+    "pct_from_high": -22.97,
+    "position_pct": 51.22
+  },
+  "technicals": {
+    "rvol": 0.94,
+    "price_vs_sma_pct": -0.41,
+    "window_return_pct": 12.64,
+    "swing_high": 5937.16,
+    "swing_low": 3541.16,
+    "day_range_position_pct": 30.33,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 29,
+    "buy_pct": 39,
+    "hold_pct": 58,
+    "sell_pct": 3,
+    "target_mean": 5579.73,
+    "target_low": 4266.88,
+    "target_high": 6682.29,
+    "upside_pct": 12.09
+  },
+  "news": {
+    "total": 5,
+    "positive": 2,
+    "negative": 1,
+    "neutral": 2,
+    "recent": [
+      {
+        "title": "Deepak Nitrite reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Deepak Nitrite outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact Deepak Nitrite",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.679533
+}

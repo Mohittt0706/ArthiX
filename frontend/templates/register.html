@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register — ArthiX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="logo">A</div>
+                <h1>Create Account</h1>
+                <p>Join ArthiX Market Intelligence</p>
+            </div>
+
+            <div class="auth-error" id="register-error"></div>
+
+            <form id="register-form" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-input" id="username" placeholder="Choose a username" required minlength="3" autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-input" id="email" placeholder="your@email.com" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-input" id="password" placeholder="At least 6 characters" required minlength="6" autocomplete="new-password">
+                </div>
+                <button type="submit" class="btn-analyze" id="register-btn">Create Account</button>
+            </form>
+
+            <div class="auth-footer">
+                Already have an account? <a href="/login">Sign in</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function handleRegister(e) {
+            e.preventDefault();
+            const btn = document.getElementById('register-btn');
+            const errEl = document.getElementById('register-error');
+            btn.disabled = true;
+            btn.textContent = 'Creating account...';
+            errEl.style.display = 'none';
+
+            try {
+                const res = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        username: document.getElementById('username').value,
+                        email: document.getElementById('email').value,
+                        password: document.getElementById('password').value
+                    })
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    window.location.href = '/dashboard';
+                } else {
+                    errEl.textContent = data.error || 'Registration failed';
+                    errEl.style.display = 'block';
+                }
+            } catch(e) {
+                errEl.textContent = 'Network error. Please try again.';
+                errEl.style.display = 'block';
+            }
+
+            btn.disabled = false;
+            btn.textContent = 'Create Account';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{
+  "symbol": "AFFLE.NS",
+  "name": "Affle India",
+  "sector": "IT",
+  "cap_segment": "small",
+  "price": {
+    "live": 3224.87,
+    "day_open": 3198.39,
+    "high": 3305.68,
+    "low": 3128.41,
+    "prev_close": 3239.76,
+    "day_change_pct": -0.46,
+    "volume": 8521200
+  },
+  "range_52w": {
+    "high": 3846.29,
+    "low": 1803.35,
+    "pct_from_high": -16.16,
+    "position_pct": 69.58
+  },
+  "technicals": {
+    "rvol": 3.03,
+    "price_vs_sma_pct": -3.13,
+    "window_return_pct": 7.71,
+    "swing_high": 3699.7,
+    "swing_low": 1950.93,
+    "day_range_position_pct": 30.63,
+    "trend": "down"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 23,
+    "buy_pct": 69,
+    "hold_pct": 10,
+    "sell_pct": 21,
+    "target_mean": 3985.48,
+    "target_low": 3360.58,
+    "target_high": 4680.83,
+    "upside_pct": 23.59
+  },
+  "news": {
+    "total": 15,
+    "positive": 5,
+    "negative": 3,
+    "neutral": 7,
+    "recent": [
+      {
+        "title": "Affle India reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Affle India outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact Affle India",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.6849747
+}

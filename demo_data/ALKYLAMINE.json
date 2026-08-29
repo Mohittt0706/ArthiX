@@ -1,0 +1,67 @@
+{
+  "symbol": "ALKYLAMINE.NS",
+  "name": "Alkyl Amines",
+  "sector": "Chemicals",
+  "cap_segment": "small",
+  "price": {
+    "live": 555.69,
+    "day_open": 550.25,
+    "high": 558.28,
+    "low": 552.1,
+    "prev_close": 565.63,
+    "day_change_pct": -1.76,
+    "volume": 3263127
+  },
+  "range_52w": {
+    "high": 710.04,
+    "low": 410.71,
+    "pct_from_high": -21.74,
+    "position_pct": 48.44
+  },
+  "technicals": {
+    "rvol": 1.02,
+    "price_vs_sma_pct": -4.49,
+    "window_return_pct": 3.04,
+    "swing_high": 656.69,
+    "swing_low": 442.07,
+    "day_range_position_pct": 61.63,
+    "trend": "down"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 27,
+    "buy_pct": 53,
+    "hold_pct": 24,
+    "sell_pct": 23,
+    "target_mean": 679.87,
+    "target_low": 538.47,
+    "target_high": 864.53,
+    "upside_pct": 22.35
+  },
+  "news": {
+    "total": 12,
+    "positive": 1,
+    "negative": 3,
+    "neutral": 8,
+    "recent": [
+      {
+        "title": "Alkyl Amines reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Alkyl Amines outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact Alkyl Amines",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.6819172
+}

@@ -1,0 +1,67 @@
+{
+  "symbol": "ULTRACEMCO.NS",
+  "name": "UltraTech Cement",
+  "sector": "Cement",
+  "cap_segment": "large",
+  "price": {
+    "live": 4960.62,
+    "day_open": 4989.66,
+    "high": 5073.12,
+    "low": 4925.46,
+    "prev_close": 4838.13,
+    "day_change_pct": 2.53,
+    "volume": 630425
+  },
+  "range_52w": {
+    "high": 6015.73,
+    "low": 4317.56,
+    "pct_from_high": -17.54,
+    "position_pct": 37.87
+  },
+  "technicals": {
+    "rvol": 3.36,
+    "price_vs_sma_pct": -4.22,
+    "window_return_pct": -0.84,
+    "swing_high": 5492.77,
+    "swing_low": 4453.02,
+    "day_range_position_pct": 57.52,
+    "trend": "down"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 10,
+    "buy_pct": 25,
+    "hold_pct": 54,
+    "sell_pct": 21,
+    "target_mean": 6151.96,
+    "target_low": 5453.49,
+    "target_high": 7611.91,
+    "upside_pct": 24.02
+  },
+  "news": {
+    "total": 7,
+    "positive": 3,
+    "negative": 2,
+    "neutral": 2,
+    "recent": [
+      {
+        "title": "UltraTech Cement reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review UltraTech Cement outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact UltraTech Cement",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.586516
+}

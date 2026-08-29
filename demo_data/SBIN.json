@@ -1,0 +1,67 @@
+{
+  "symbol": "SBIN.NS",
+  "name": "State Bank of India",
+  "sector": "Banking",
+  "cap_segment": "large",
+  "price": {
+    "live": 3127.89,
+    "day_open": 3138.99,
+    "high": 3201.15,
+    "low": 3090.63,
+    "prev_close": 3072.39,
+    "day_change_pct": 1.81,
+    "volume": 5800375
+  },
+  "range_52w": {
+    "high": 3742.27,
+    "low": 2693.72,
+    "pct_from_high": -16.42,
+    "position_pct": 41.41
+  },
+  "technicals": {
+    "rvol": 2.57,
+    "price_vs_sma_pct": -0.45,
+    "window_return_pct": 2.93,
+    "swing_high": 3474.07,
+    "swing_low": 2705.77,
+    "day_range_position_pct": 87.22,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 8,
+    "buy_pct": 23,
+    "hold_pct": 53,
+    "sell_pct": 24,
+    "target_mean": 3603.25,
+    "target_low": 3039.61,
+    "target_high": 4579.63,
+    "upside_pct": 15.2
+  },
+  "news": {
+    "total": 10,
+    "positive": 3,
+    "negative": 0,
+    "neutral": 7,
+    "recent": [
+      {
+        "title": "State Bank of India reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review State Bank of India outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact State Bank of India",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.4828744
+}

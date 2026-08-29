@@ -1,0 +1,67 @@
+{
+  "symbol": "HINDUNILVR.NS",
+  "name": "Hindustan Unilever",
+  "sector": "FMCG",
+  "cap_segment": "large",
+  "price": {
+    "live": 2516.0,
+    "day_open": 2540.49,
+    "high": 2563.36,
+    "low": 2465.32,
+    "prev_close": 2508.98,
+    "day_change_pct": 0.28,
+    "volume": 2962149
+  },
+  "range_52w": {
+    "high": 2918.62,
+    "low": 1444.05,
+    "pct_from_high": -13.79,
+    "position_pct": 72.7
+  },
+  "technicals": {
+    "rvol": 0.38,
+    "price_vs_sma_pct": 0.57,
+    "window_return_pct": 9.46,
+    "swing_high": 2638.13,
+    "swing_low": 1537.0,
+    "day_range_position_pct": 52.13,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 20,
+    "buy_pct": 31,
+    "hold_pct": 61,
+    "sell_pct": 8,
+    "target_mean": 3105.94,
+    "target_low": 2619.78,
+    "target_high": 3706.08,
+    "upside_pct": 23.45
+  },
+  "news": {
+    "total": 4,
+    "positive": 1,
+    "negative": 0,
+    "neutral": 3,
+    "recent": [
+      {
+        "title": "Hindustan Unilever reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Hindustan Unilever outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact Hindustan Unilever",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.461667
+}

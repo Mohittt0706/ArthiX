@@ -1,0 +1,67 @@
+{
+  "symbol": "HDFCBANK.NS",
+  "name": "HDFC Bank",
+  "sector": "Banking",
+  "cap_segment": "large",
+  "price": {
+    "live": 1888.16,
+    "day_open": 1879.89,
+    "high": 1922.69,
+    "low": 1857.41,
+    "prev_close": 1870.81,
+    "day_change_pct": 0.93,
+    "volume": 4589192
+  },
+  "range_52w": {
+    "high": 2792.96,
+    "low": 1362.07,
+    "pct_from_high": -32.4,
+    "position_pct": 36.77
+  },
+  "technicals": {
+    "rvol": 2.88,
+    "price_vs_sma_pct": 3.88,
+    "window_return_pct": -4.33,
+    "swing_high": 2665.78,
+    "swing_low": 1363.37,
+    "day_range_position_pct": 32.63,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 13,
+    "buy_pct": 33,
+    "hold_pct": 50,
+    "sell_pct": 17,
+    "target_mean": 2025.29,
+    "target_low": 1562.29,
+    "target_high": 2357.99,
+    "upside_pct": 7.26
+  },
+  "news": {
+    "total": 7,
+    "positive": 4,
+    "negative": 1,
+    "neutral": 2,
+    "recent": [
+      {
+        "title": "HDFC Bank reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review HDFC Bank outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact HDFC Bank",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.4459949
+}

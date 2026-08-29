@@ -1,0 +1,53 @@
+{
+  "large": [
+    {"symbol": "TCS.NS", "name": "Tata Consultancy Services", "sector": "IT"},
+    {"symbol": "INFY.NS", "name": "Infosys", "sector": "IT"},
+    {"symbol": "RELIANCE.NS", "name": "Reliance Industries", "sector": "Oil & Gas"},
+    {"symbol": "HDFCBANK.NS", "name": "HDFC Bank", "sector": "Banking"},
+    {"symbol": "ICICIBANK.NS", "name": "ICICI Bank", "sector": "Banking"},
+    {"symbol": "HINDUNILVR.NS", "name": "Hindustan Unilever", "sector": "FMCG"},
+    {"symbol": "ITC.NS", "name": "ITC Limited", "sector": "FMCG"},
+    {"symbol": "SBIN.NS", "name": "State Bank of India", "sector": "Banking"},
+    {"symbol": "BHARTIARTL.NS", "name": "Bharti Airtel", "sector": "Telecom"},
+    {"symbol": "KOTAKBANK.NS", "name": "Kotak Mahindra Bank", "sector": "Banking"},
+    {"symbol": "LT.NS", "name": "Larsen & Toubro", "sector": "Infrastructure"},
+    {"symbol": "AXISBANK.NS", "name": "Axis Bank", "sector": "Banking"},
+    {"symbol": "ASIANPAINT.NS", "name": "Asian Paints", "sector": "Paints"},
+    {"symbol": "MARUTI.NS", "name": "Maruti Suzuki", "sector": "Automobile"},
+    {"symbol": "SUNPHARMA.NS", "name": "Sun Pharma", "sector": "Pharma"},
+    {"symbol": "TATAMOTORS.NS", "name": "Tata Motors", "sector": "Automobile"},
+    {"symbol": "WIPRO.NS", "name": "Wipro", "sector": "IT"},
+    {"symbol": "HCLTECH.NS", "name": "HCL Technologies", "sector": "IT"},
+    {"symbol": "ULTRACEMCO.NS", "name": "UltraTech Cement", "sector": "Cement"},
+    {"symbol": "ONGC.NS", "name": "Oil and Natural Gas Corp", "sector": "Oil & Gas"}
+  ],
+  "mid": [
+    {"symbol": "ADANIENT.NS", "name": "Adani Enterprises", "sector": "Conglomerate"},
+    {"symbol": "ADANIPORTS.NS", "name": "Adani Ports", "sector": "Infrastructure"},
+    {"symbol": "BAJAJ-AUTO.NS", "name": "Bajaj Auto", "sector": "Automobile"},
+    {"symbol": "COALINDIA.NS", "name": "Coal India", "sector": "Mining"},
+    {"symbol": "DRREDDY.NS", "name": "Dr. Reddy's Laboratories", "sector": "Pharma"},
+    {"symbol": "EICHERMOT.NS", "name": "Eicher Motors", "sector": "Automobile"},
+    {"symbol": "GRASIM.NS", "name": "Grasim Industries", "sector": "Cement"},
+    {"symbol": "HINDALCO.NS", "name": "Hindalco Industries", "sector": "Metals"},
+    {"symbol": "INDUSINDBK.NS", "name": "IndusInd Bank", "sector": "Banking"},
+    {"symbol": "JSWSTEEL.NS", "name": "JSW Steel", "sector": "Metals"},
+    {"symbol": "M&M.NS", "name": "Mahindra & Mahindra", "sector": "Automobile"},
+    {"symbol": "NTPC.NS", "name": "NTPC", "sector": "Power"},
+    {"symbol": "POWERGRID.NS", "name": "Power Grid Corp", "sector": "Power"},
+    {"symbol": "TATASTEEL.NS", "name": "Tata Steel", "sector": "Metals"},
+    {"symbol": "TECHM.NS", "name": "Tech Mahindra", "sector": "IT"}
+  ],
+  "small": [
+    {"symbol": "DIXON.NS", "name": "Dixon Technologies", "sector": "Electronics"},
+    {"symbol": "CLEAN.NS", "name": "Clean Science", "sector": "Chemicals"},
+    {"symbol": "DEEPAKNTR.NS", "name": "Deepak Nitrite", "sector": "Chemicals"},
+    {"symbol": "ALKYLAMINE.NS", "name": "Alkyl Amines", "sector": "Chemicals"},
+    {"symbol": "AFFLE.NS", "name": "Affle India", "sector": "IT"},
+    {"symbol": "TANLA.NS", "name": "Tanla Platforms", "sector": "IT"},
+    {"symbol": "ROUTE.NS", "name": "Route Mobile", "sector": "IT"},
+    {"symbol": "CDSL.NS", "name": "CDSL", "sector": "Financial Services"},
+    {"symbol": "CAMS.NS", "name": "CAMS", "sector": "Financial Services"},
+    {"symbol": "IIFL.NS", "name": "IIFL Finance", "sector": "Financial Services"}
+  ]
+}

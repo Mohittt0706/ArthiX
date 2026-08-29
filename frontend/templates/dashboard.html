@@ -1,0 +1,392 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="search-section">
+    <h1>ArthiX</h1>
+    <p class="tagline">AI-Powered Market Intelligence for Indian Stocks</p>
+
+    <div class="search-box">
+        <input type="text" class="form-input" id="stock-search" 
+               placeholder="Search for a stock... (e.g., TCS, INFY, RELIANCE)" 
+               autocomplete="off">
+        <div class="search-suggestions" id="suggestions"></div>
+    </div>
+
+    <button class="btn-analyze" id="analyze-btn" disabled onclick="startAnalysis()">
+        Analyze Stock
+    </button>
+</div>
+
+<div id="pipeline-section" style="display:none; max-width:900px; margin:0 auto;">
+    <div class="card" style="margin-bottom:1.5rem;">
+        <div class="card-header">
+            <span class="card-title">Analysis Pipeline</span>
+            <span class="spinner" id="pipeline-spinner"></span>
+        </div>
+        <div class="pipeline" id="pipeline">
+            <div class="agent-card waiting" data-agent="scout">
+                <div class="agent-dot waiting"></div>
+                <div class="agent-info">
+                    <div class="agent-name">Scout</div>
+                    <div class="agent-status">Waiting</div>
+                </div>
+            </div>
+            <div class="agent-card waiting" data-agent="technician">
+                <div class="agent-dot waiting"></div>
+                <div class="agent-info">
+                    <div class="agent-name">Technician</div>
+                    <div class="agent-status">Waiting</div>
+                </div>
+            </div>
+            <div class="agent-card waiting" data-agent="fundamentalist">
+                <div class="agent-dot waiting"></div>
+                <div class="agent-info">
+                    <div class="agent-name">Fundamentalist</div>
+                    <div class="agent-status">Waiting</div>
+                </div>
+            </div>
+            <div class="agent-card waiting" data-agent="newsdesk">
+                <div class="agent-dot waiting"></div>
+                <div class="agent-info">
+                    <div class="agent-name">Newsdesk</div>
+                    <div class="agent-status">Waiting</div>
+                </div>
+            </div>
+            <div class="agent-card waiting" data-agent="bull">
+                <div class="agent-dot waiting"></div>
+                <div class="agent-info">
+                    <div class="agent-name">Bull</div>
+                    <div class="agent-status">Waiting</div>
+                </div>
+            </div>
+            <div class="agent-card waiting" data-agent="bear">
+                <div class="agent-dot waiting"></div>
+                <div class="agent-info">
+                    <div class="agent-name">Bear</div>
+                    <div class="agent-status">Waiting</div>
+                </div>
+            </div>
+            <div class="agent-card waiting" data-agent="judge">
+                <div class="agent-dot waiting"></div>
+                <div class="agent-info">
+                    <div class="agent-name">Judge</div>
+                    <div class="agent-status">Waiting</div>
+                </div>
+            </div>
+            <div class="agent-card waiting" data-agent="messenger">
+                <div class="agent-dot waiting"></div>
+                <div class="agent-info">
+                    <div class="agent-name">Messenger</div>
+                    <div class="agent-status">Waiting</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="result-section" style="display:none; max-width:1000px; margin:0 auto;"></div>
+{% endblock %}
+
+{% block head %}
+<style>
+    .search-suggestions { position: absolute; }
+    .search-box { position: relative; }
+</style>
+{% endblock %}
+
+{% block script %}
+<script>
+let selectedStock = null;
+let searchTimeout = null;
+
+const searchInput = document.getElementById('stock-search');
+const suggestionsEl = document.getElementById('suggestions');
+const analyzeBtn = document.getElementById('analyze-btn');
+
+searchInput.addEventListener('input', function() {
+    clearTimeout(searchTimeout);
+    const q = this.value.trim();
+    if (q.length < 1) {
+        suggestionsEl.classList.remove('active');
+        return;
+    }
+    searchTimeout = setTimeout(() => searchStocks(q), 200);
+});
+
+searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        if (selectedStock) startAnalysis();
+    }
+});
+
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.search-box')) {
+        suggestionsEl.classList.remove('active');
+    }
+});
+
+async function searchStocks(query) {
+    try {
+        const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+        const results = await res.json();
+        if (results.length === 0) {
+            suggestionsEl.classList.remove('active');
+            return;
+        }
+        suggestionsEl.innerHTML = results.map(s => `
+            <div class="search-suggestion" onclick="selectStock('${s.symbol}', '${s.name.replace(/'/g, "\\'")}', '${s.cap_segment}')">
+                <div>
+                    <span class="symbol">${s.symbol.replace('.NS','')}</span>
+                    <span class="name"> — ${s.name}</span>
+                </div>
+                <span class="segment">${s.cap_segment}</span>
+            </div>
+        `).join('');
+        suggestionsEl.classList.add('active');
+    } catch(e) {
+        console.error('Search error:', e);
+    }
+}
+
+function selectStock(symbol, name, segment) {
+    selectedStock = { symbol, name, segment };
+    searchInput.value = `${symbol.replace('.NS','')} — ${name}`;
+    suggestionsEl.classList.remove('active');
+    analyzeBtn.disabled = false;
+}
+
+function updateAgent(agent, status) {
+    const card = document.querySelector(`[data-agent="${agent}"]`);
+    if (!card) return;
+    card.className = `agent-card ${status}`;
+    card.querySelector('.agent-dot').className = `agent-dot ${status}`;
+    card.querySelector('.agent-status').textContent = 
+        status === 'working' ? 'Working...' : 
+        status === 'complete' ? 'Done' : 'Waiting';
+}
+
+async function startAnalysis() {
+    if (!selectedStock) return;
+
+    const pipelineSection = document.getElementById('pipeline-section');
+    const resultSection = document.getElementById('result-section');
+    const analyzeBtn = document.getElementById('analyze-btn');
+
+    pipelineSection.style.display = 'block';
+    resultSection.style.display = 'none';
+    analyzeBtn.disabled = true;
+    analyzeBtn.textContent = 'Analyzing...';
+
+    const agents = ['scout','technician','fundamentalist','newsdesk','bull','bear','judge','messenger'];
+    agents.forEach(a => updateAgent(a, 'waiting'));
+
+    let agentIdx = 0;
+    const agentInterval = setInterval(() => {
+        if (agentIdx < agents.length) {
+            if (agentIdx > 0) updateAgent(agents[agentIdx-1], 'complete');
+            updateAgent(agents[agentIdx], 'working');
+            agentIdx++;
+        }
+    }, 400);
+
+    try {
+        const res = await fetch('/api/analyze', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ symbol: selectedStock.symbol })
+        });
+
+        clearInterval(agentInterval);
+
+        if (!res.ok) {
+            const err = await res.json();
+            alert('Analysis failed: ' + (err.error || 'Unknown error'));
+            resetUI();
+            return;
+        }
+
+        agents.forEach(a => updateAgent(a, 'complete'));
+        document.getElementById('pipeline-spinner').style.display = 'none';
+
+        const data = await res.json();
+        setTimeout(() => renderResult(data), 600);
+
+    } catch(e) {
+        clearInterval(agentInterval);
+        alert('Network error: ' + e.message);
+        resetUI();
+    }
+}
+
+function resetUI() {
+    document.getElementById('pipeline-section').style.display = 'none';
+    document.getElementById('result-section').style.display = 'none';
+    const btn = document.getElementById('analyze-btn');
+    btn.disabled = !selectedStock;
+    btn.textContent = 'Analyze Stock';
+    document.getElementById('pipeline-spinner').style.display = '';
+    ['scout','technician','fundamentalist','newsdesk','bull','bear','judge','messenger']
+        .forEach(a => updateAgent(a, 'waiting'));
+}
+
+function renderResult(data) {
+    const v = data.verdict;
+    const e = data.evidence;
+    const agents = data.agent_outputs;
+    const verdictClass = v.verdict.toLowerCase();
+
+    const change = e.price?.day_change_pct;
+    const changeStr = change !== null && change !== undefined ? 
+        `${change >= 0 ? '+' : ''}${change.toFixed(2)}%` : 'N/A';
+    const changeClass = change > 0 ? 'up' : change < 0 ? 'down' : '';
+
+    let html = `
+    <div class="stock-header">
+        <div>
+            <div class="stock-symbol">${e.symbol.replace('.NS','')}</div>
+            <div class="stock-name">${e.name} · ${e.sector} · ${e.cap_segment} cap</div>
+        </div>
+        <div style="margin-left:auto; text-align:right;">
+            <div class="stock-price">₹${e.price?.live?.toLocaleString() || 'N/A'}</div>
+            <div class="stock-change ${changeClass}">${changeStr}</div>
+        </div>
+    </div>
+
+    <div class="verdict-section">
+        <div class="verdict-badge ${verdictClass}">
+            ${v.verdict === 'BUY' ? '🟢' : v.verdict === 'WATCH' ? '🟡' : '🔴'} ${v.verdict}
+        </div>
+        <div class="verdict-confidence">
+            ${v.confidence}<span>/10 confidence</span>
+        </div>
+    </div>
+
+    <div class="stat-grid">
+        <div class="stat-card positive">
+            <div class="stat-label">Bull Score</div>
+            <div class="stat-value">${v.bull_score}</div>
+        </div>
+        <div class="stat-card negative">
+            <div class="stat-label">Bear Score</div>
+            <div class="stat-value">${v.bear_score}</div>
+        </div>
+        <div class="stat-card ${v.net > 0 ? 'positive' : v.net < 0 ? 'negative' : 'neutral'}">
+            <div class="stat-label">Net Score</div>
+            <div class="stat-value">${v.net > 0 ? '+' : ''}${v.net}</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Winner</div>
+            <div class="stat-value">${v.winner}</div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-bottom:1rem;">
+        <div class="card-header">
+            <span class="card-title">Score Breakdown</span>
+        </div>
+        <div class="score-row">
+            <span class="score-label">Bull</span>
+            <div class="score-bar-container">
+                <div class="score-bar bull" style="width:${v.bull_score}%"></div>
+            </div>
+            <span class="score-value">${v.bull_score}</span>
+        </div>
+        <div class="score-row">
+            <span class="score-label">Bear</span>
+            <div class="score-bar-container">
+                <div class="score-bar bear" style="width:${v.bear_score}%"></div>
+            </div>
+            <span class="score-value">${v.bear_score}</span>
+        </div>
+    </div>
+
+    <div class="analysis-grid">
+        <div class="analysis-section">
+            <div class="section-title"><span class="section-icon">📊</span> Technical Analysis</div>
+            <ul class="analysis-list">
+                <li><span class="label">Trend:</span> ${e.technicals?.trend || 'N/A'}</li>
+                <li><span class="label">RVOL <span class="tooltip-trigger" title="Relative Volume - trading activity compared to normal volume"><span class="tooltip-icon">?</span></span>:</span> ${e.technicals?.rvol || 'N/A'}x</li>
+                <li><span class="label">Price vs SMA <span class="tooltip-trigger" title="Simple Moving Average - average price over 20 days"><span class="tooltip-icon">?</span></span>:</span> ${e.technicals?.price_vs_sma_pct != null ? e.technicals.price_vs_sma_pct.toFixed(1) + '%' : 'N/A'}</li>
+                <li><span class="label">52-Week Position <span class="tooltip-trigger" title="Where current price sits between 52-week low and high"><span class="tooltip-icon">?</span></span>:</span> ${e.range_52w?.position_pct != null ? e.range_52w.position_pct.toFixed(0) + '%' : 'N/A'}</li>
+                <li><span class="label">Recent Return:</span> ${e.technicals?.window_return_pct != null ? e.technicals.window_return_pct.toFixed(1) + '%' : 'N/A'}</li>
+                <li><span class="label">Day Range Position:</span> ${e.technicals?.day_range_position_pct != null ? e.technicals.day_range_position_pct.toFixed(0) + '%' : 'N/A'}</li>
+            </ul>
+        </div>
+
+        <div class="analysis-section">
+            <div class="section-title"><span class="section-icon">📈</span> Fundamental / Analyst</div>
+            <ul class="analysis-list">
+                <li><span class="label">Consensus:</span> ${e.analyst?.consensus || 'N/A'}</li>
+                <li><span class="label">Analysts:</span> ${e.analyst?.num_analysts || 'N/A'}</li>
+                <li><span class="label">Target Mean:</span> ₹${e.analyst?.target_mean?.toLocaleString() || 'N/A'}</li>
+                <li><span class="label">Upside <span class="tooltip-trigger" title="Expected price increase to reach analyst target"><span class="tooltip-icon">?</span></span>:</span> ${e.analyst?.upside_pct != null ? e.analyst.upside_pct.toFixed(1) + '%' : 'N/A'}</li>
+                <li><span class="label">Buy / Hold / Sell:</span> ${e.analyst?.buy_pct ?? 'N/A'}% / ${e.analyst?.hold_pct ?? 'N/A'}% / ${e.analyst?.sell_pct ?? 'N/A'}%</li>
+            </ul>
+        </div>
+
+        <div class="analysis-section">
+            <div class="section-title"><span class="section-icon">📰</span> News Sentiment</div>
+            <div class="stat-grid" style="margin:0;">
+                <div class="stat-card positive"><div class="stat-label">Positive</div><div class="stat-value">${e.news?.positive || 0}</div></div>
+                <div class="stat-card neutral"><div class="stat-label">Neutral</div><div class="stat-value">${e.news?.neutral || 0}</div></div>
+                <div class="stat-card negative"><div class="stat-label">Negative</div><div class="stat-value">${e.news?.negative || 0}</div></div>
+            </div>
+            <div style="margin-top:0.75rem;">
+                ${(e.news?.recent || []).map(n => `
+                    <div class="news-item">
+                        <div class="news-title">${n.title || 'Untitled'}</div>
+                        <div class="news-source">${n.publisher || ''}</div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+
+        <div class="analysis-section">
+            <div class="section-title"><span class="section-icon">🎯</span> Key Details</div>
+            <ul class="analysis-list">
+                <li><span class="label">Key Catalyst:</span> ${v.key_catalyst || 'N/A'}</li>
+                <li><span class="label">52-Week High:</span> ₹${e.range_52w?.high?.toLocaleString() || 'N/A'}</li>
+                <li><span class="label">52-Week Low:</span> ₹${e.range_52w?.low?.toLocaleString() || 'N/A'}</li>
+                <li><span class="label">Day Open:</span> ₹${e.price?.day_open?.toLocaleString() || 'N/A'}</li>
+                <li><span class="label">Volume:</span> ${e.price?.volume?.toLocaleString() || 'N/A'}</li>
+                <li><span class="label">Data Source:</span> ${e.source || 'N/A'}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="debate-section">
+        <div class="debate-entry bull">
+            <div class="agent-label">🐂 Bull Case</div>
+            <div class="debate-text">${agents.bull?.output?.summary || 'No bull case available.'}</div>
+        </div>
+        <div class="debate-entry bear">
+            <div class="agent-label">🐻 Bear Case</div>
+            <div class="debate-text">${agents.bear?.output?.summary || 'No bear case available.'}</div>
+        </div>
+        <div class="debate-entry judge">
+            <div class="agent-label">⚖️ Judge Verdict</div>
+            <div class="debate-text">
+                <strong>${v.rationale}</strong><br><br>
+                <em>Key catalyst: ${v.key_catalyst}</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer" style="margin-top:2rem;">
+        ⚠️ Analysis only. No trade was placed. Not investment advice. Data sourced from ${e.source || 'demo'}. 
+        ArthiX provides AI-generated market assessments for informational purposes only.
+    </div>
+    `;
+
+    const resultSection = document.getElementById('result-section');
+    resultSection.innerHTML = html;
+    resultSection.style.display = 'block';
+
+    const btn = document.getElementById('analyze-btn');
+    btn.disabled = false;
+    btn.textContent = 'Analyze Stock';
+}
+</script>
+{% endblock %}

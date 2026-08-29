@@ -1,0 +1,67 @@
+{
+  "symbol": "COALINDIA.NS",
+  "name": "Coal India",
+  "sector": "Mining",
+  "cap_segment": "mid",
+  "price": {
+    "live": 2062.8,
+    "day_open": 2049.31,
+    "high": 2066.47,
+    "low": 2010.84,
+    "prev_close": 2040.94,
+    "day_change_pct": 1.07,
+    "volume": 5123560
+  },
+  "range_52w": {
+    "high": 2688.03,
+    "low": 1359.55,
+    "pct_from_high": -23.26,
+    "position_pct": 52.94
+  },
+  "technicals": {
+    "rvol": 2.05,
+    "price_vs_sma_pct": -0.29,
+    "window_return_pct": -9.15,
+    "swing_high": 2455.93,
+    "swing_low": 1380.8,
+    "day_range_position_pct": 47.99,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "sell",
+    "num_analysts": 17,
+    "buy_pct": 64,
+    "hold_pct": 7,
+    "sell_pct": 29,
+    "target_mean": 2363.66,
+    "target_low": 1991.12,
+    "target_high": 2911.41,
+    "upside_pct": 14.58
+  },
+  "news": {
+    "total": 12,
+    "positive": 5,
+    "negative": 0,
+    "neutral": 7,
+    "recent": [
+      {
+        "title": "Coal India reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Coal India outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact Coal India",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.6093938
+}

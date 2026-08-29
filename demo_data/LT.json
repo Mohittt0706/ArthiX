@@ -1,0 +1,67 @@
+{
+  "symbol": "LT.NS",
+  "name": "Larsen & Toubro",
+  "sector": "Infrastructure",
+  "cap_segment": "large",
+  "price": {
+    "live": 4113.67,
+    "day_open": 4089.33,
+    "high": 4120.09,
+    "low": 4084.79,
+    "prev_close": 4103.88,
+    "day_change_pct": 0.24,
+    "volume": 9030567
+  },
+  "range_52w": {
+    "high": 4758.17,
+    "low": 3408.06,
+    "pct_from_high": -13.55,
+    "position_pct": 52.26
+  },
+  "technicals": {
+    "rvol": 0.41,
+    "price_vs_sma_pct": 4.92,
+    "window_return_pct": 2.44,
+    "swing_high": 4468.97,
+    "swing_low": 3530.65,
+    "day_range_position_pct": 15.55,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 22,
+    "buy_pct": 37,
+    "hold_pct": 40,
+    "sell_pct": 23,
+    "target_mean": 4564.1,
+    "target_low": 4106.86,
+    "target_high": 5416.64,
+    "upside_pct": 10.95
+  },
+  "news": {
+    "total": 15,
+    "positive": 5,
+    "negative": 2,
+    "neutral": 8,
+    "recent": [
+      {
+        "title": "Larsen & Toubro reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Larsen & Toubro outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact Larsen & Toubro",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.4906142
+}

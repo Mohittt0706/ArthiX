@@ -1,0 +1,67 @@
+{
+  "symbol": "ROUTE.NS",
+  "name": "Route Mobile",
+  "sector": "IT",
+  "cap_segment": "small",
+  "price": {
+    "live": 3026.77,
+    "day_open": 3034.67,
+    "high": 3095.35,
+    "low": 2948.13,
+    "prev_close": 2973.81,
+    "day_change_pct": 1.78,
+    "volume": 3925028
+  },
+  "range_52w": {
+    "high": 4376.9,
+    "low": 2107.44,
+    "pct_from_high": -30.85,
+    "position_pct": 40.51
+  },
+  "technicals": {
+    "rvol": 1.62,
+    "price_vs_sma_pct": 3.48,
+    "window_return_pct": -2.16,
+    "swing_high": 4283.52,
+    "swing_low": 2228.36,
+    "day_range_position_pct": 31.39,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 22,
+    "buy_pct": 44,
+    "hold_pct": 53,
+    "sell_pct": 3,
+    "target_mean": 3664.21,
+    "target_low": 3244.33,
+    "target_high": 4667.31,
+    "upside_pct": 21.06
+  },
+  "news": {
+    "total": 13,
+    "positive": 3,
+    "negative": 2,
+    "neutral": 8,
+    "recent": [
+      {
+        "title": "Route Mobile reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Route Mobile outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "negative"
+      },
+      {
+        "title": "Sector trends impact Route Mobile",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.6912057
+}

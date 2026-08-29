@@ -1,0 +1,67 @@
+{
+  "symbol": "KOTAKBANK.NS",
+  "name": "Kotak Mahindra Bank",
+  "sector": "Banking",
+  "cap_segment": "large",
+  "price": {
+    "live": 4558.49,
+    "day_open": 4593.48,
+    "high": 4559.21,
+    "low": 4489.92,
+    "prev_close": 4465.19,
+    "day_change_pct": 2.09,
+    "volume": 2757126
+  },
+  "range_52w": {
+    "high": 5268.38,
+    "low": 4055.51,
+    "pct_from_high": -13.47,
+    "position_pct": 41.47
+  },
+  "technicals": {
+    "rvol": 2.91,
+    "price_vs_sma_pct": 3.2,
+    "window_return_pct": 3.29,
+    "swing_high": 5121.13,
+    "swing_low": 4182.18,
+    "day_range_position_pct": 17.44,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 15,
+    "buy_pct": 26,
+    "hold_pct": 57,
+    "sell_pct": 17,
+    "target_mean": 4705.96,
+    "target_low": 3959.64,
+    "target_high": 6061.79,
+    "upside_pct": 3.24
+  },
+  "news": {
+    "total": 7,
+    "positive": 1,
+    "negative": 3,
+    "neutral": 3,
+    "recent": [
+      {
+        "title": "Kotak Mahindra Bank reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Kotak Mahindra Bank outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact Kotak Mahindra Bank",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.488258
+}

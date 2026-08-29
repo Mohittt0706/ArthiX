@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}History{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Analysis History</h1>
+    <p>Your past stock analyses</p>
+</div>
+
+<div id="history-container">
+    <div class="empty-state" id="empty-state">
+        <div class="empty-icon">📋</div>
+        <h3>No analyses yet</h3>
+        <p>Search and analyze a stock to see results here.</p>
+        <a href="/dashboard" class="btn btn-primary" style="margin-top:1rem;">Go to Dashboard</a>
+    </div>
+    <div class="card" id="history-card" style="display:none;">
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Verdict</th>
+                    <th>Confidence</th>
+                    <th>Net</th>
+                    <th>Source</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="history-tbody"></tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+async function loadHistory() {
+    try {
+        const res = await fetch('/api/history');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data.length === 0) return;
+
+        document.getElementById('empty-state').style.display = 'none';
+        document.getElementById('history-card').style.display = 'block';
+
+        const tbody = document.getElementById('history-tbody');
+        tbody.innerHTML = data.map(h => {
+            const v = h.verdict.toLowerCase();
+            const date = new Date(h.created_at).toLocaleDateString('en-IN', {
+                day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit'
+            });
+            return `<tr onclick="window.location='/analysis/${h.symbol}'" style="cursor:pointer">
+                <td><strong>${h.symbol.replace('.NS','')}</strong></td>
+                <td><span class="verdict-pill ${v}">${h.verdict}</span></td>
+                <td>${h.confidence}/10</td>
+                <td>${h.net_score > 0 ? '+' : ''}${h.net_score}</td>
+                <td>${h.mode}</td>
+                <td>${date}</td>
+            </tr>`;
+        }).join('');
+    } catch(e) {
+        console.error('Failed to load history:', e);
+    }
+}
+loadHistory();
+</script>
+{% endblock %}

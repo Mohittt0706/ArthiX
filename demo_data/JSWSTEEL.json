@@ -1,0 +1,67 @@
+{
+  "symbol": "JSWSTEEL.NS",
+  "name": "JSW Steel",
+  "sector": "Metals",
+  "cap_segment": "mid",
+  "price": {
+    "live": 3161.69,
+    "day_open": 3187.72,
+    "high": 3184.74,
+    "low": 3071.36,
+    "prev_close": 3248.16,
+    "day_change_pct": -2.66,
+    "volume": 6915780
+  },
+  "range_52w": {
+    "high": 3761.77,
+    "low": 2125.09,
+    "pct_from_high": -15.95,
+    "position_pct": 63.34
+  },
+  "technicals": {
+    "rvol": 1.93,
+    "price_vs_sma_pct": 0.16,
+    "window_return_pct": -5.04,
+    "swing_high": 3561.66,
+    "swing_low": 2178.93,
+    "day_range_position_pct": 11.98,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "sell",
+    "num_analysts": 9,
+    "buy_pct": 55,
+    "hold_pct": 21,
+    "sell_pct": 24,
+    "target_mean": 3621.94,
+    "target_low": 3161.48,
+    "target_high": 4673.28,
+    "upside_pct": 14.56
+  },
+  "news": {
+    "total": 7,
+    "positive": 2,
+    "negative": 1,
+    "neutral": 4,
+    "recent": [
+      {
+        "title": "JSW Steel reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review JSW Steel outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact JSW Steel",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.6571524
+}

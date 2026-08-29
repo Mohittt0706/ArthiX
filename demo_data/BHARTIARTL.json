@@ -1,0 +1,67 @@
+{
+  "symbol": "BHARTIARTL.NS",
+  "name": "Bharti Airtel",
+  "sector": "Telecom",
+  "cap_segment": "large",
+  "price": {
+    "live": 542.03,
+    "day_open": 538.65,
+    "high": 546.39,
+    "low": 538.48,
+    "prev_close": 557.54,
+    "day_change_pct": -2.78,
+    "volume": 1150672
+  },
+  "range_52w": {
+    "high": 699.18,
+    "low": 281.77,
+    "pct_from_high": -22.48,
+    "position_pct": 62.35
+  },
+  "technicals": {
+    "rvol": 1.98,
+    "price_vs_sma_pct": -1.46,
+    "window_return_pct": 0.61,
+    "swing_high": 689.97,
+    "swing_low": 305.02,
+    "day_range_position_pct": 69.42,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 22,
+    "buy_pct": 55,
+    "hold_pct": 23,
+    "sell_pct": 22,
+    "target_mean": 607.2,
+    "target_low": 544.93,
+    "target_high": 686.02,
+    "upside_pct": 12.02
+  },
+  "news": {
+    "total": 7,
+    "positive": 2,
+    "negative": 3,
+    "neutral": 2,
+    "recent": [
+      {
+        "title": "Bharti Airtel reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Bharti Airtel outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact Bharti Airtel",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.4856727
+}

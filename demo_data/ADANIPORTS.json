@@ -1,0 +1,67 @@
+{
+  "symbol": "ADANIPORTS.NS",
+  "name": "Adani Ports",
+  "sector": "Infrastructure",
+  "cap_segment": "mid",
+  "price": {
+    "live": 4847.19,
+    "day_open": 4892.34,
+    "high": 4944.8,
+    "low": 4800.16,
+    "prev_close": 4721.66,
+    "day_change_pct": 2.66,
+    "volume": 8401866
+  },
+  "range_52w": {
+    "high": 5798.1,
+    "low": 3444.19,
+    "pct_from_high": -16.4,
+    "position_pct": 59.6
+  },
+  "technicals": {
+    "rvol": 1.18,
+    "price_vs_sma_pct": 3.45,
+    "window_return_pct": -8.78,
+    "swing_high": 5313.58,
+    "swing_low": 3705.37,
+    "day_range_position_pct": 79.55,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 16,
+    "buy_pct": 69,
+    "hold_pct": 19,
+    "sell_pct": 12,
+    "target_mean": 5834.98,
+    "target_low": 5180.62,
+    "target_high": 7421.31,
+    "upside_pct": 20.38
+  },
+  "news": {
+    "total": 6,
+    "positive": 3,
+    "negative": 1,
+    "neutral": 2,
+    "recent": [
+      {
+        "title": "Adani Ports reports quarterly results",
+        "publisher": "Economic Times",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Market analysts review Adani Ports outlook",
+        "publisher": "Moneycontrol",
+        "sentiment": "positive"
+      },
+      {
+        "title": "Sector trends impact Adani Ports",
+        "publisher": "LiveMint",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "data_gaps": [],
+  "source": "demo",
+  "fetched_at": 1788014941.5936966
+}
